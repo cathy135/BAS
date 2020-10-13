@@ -50,6 +50,8 @@ Statistical Association.  103:410-423.  \cr
 \seealso{
 Other special functions: 
 \code{\link{hypergeometric1F1}()},
+\code{\link{mphypergeometric1F1}()},
+\code{\link{mpphi1}()},
 \code{\link{phi1}()}
 }
 \author{

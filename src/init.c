@@ -8,9 +8,11 @@
 /* .C calls */
 extern void gexpectations_vect(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void hypergeometric1F1(void *, void *, void *, void *, void *, void *);
+extern void mphypergeometric1F1(void *, void *, void *, void *, void *, void *); /* testing mpfr */
 extern void hypergeometric2F1(void *, void *, void *, void *, void *);
 extern void logHyperGauss2F1(void *, void *, void *, void *, void *);
 extern void phi1(void *, void *, void *, void *, void *, void *, void *);
+extern void mpphi1(void *, void *, void *, void *, void *, void *, void *);
 
 /* .Call calls */
 extern SEXP glm_deterministic(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
@@ -28,9 +30,11 @@ extern SEXP sampleworep_new(SEXP,SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP,
 static const R_CMethodDef CEntries[] = {
   {"gexpectations_vect", (DL_FUNC) &gexpectations_vect, 11},
   {"hypergeometric1F1",  (DL_FUNC) &hypergeometric1F1,  6},
+  {"mphypergeometric1F1",  (DL_FUNC) &mphypergeometric1F1,  6},
   {"hypergeometric2F1",  (DL_FUNC) &hypergeometric2F1,  5},
   {"logHyperGauss2F1",   (DL_FUNC) &logHyperGauss2F1,   5},
   {"phi1",               (DL_FUNC) &phi1,               7},
+  {"mpphi1",               (DL_FUNC) &mpphi1,           7},
   {NULL, NULL, 0}
 };
 

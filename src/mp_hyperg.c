@@ -74,16 +74,16 @@ extern double log ( double );
 extern double fabs ( double );
 double gam(double), lgam(double);
 double hyp2f0 ( double, double, double, int, double * );
-static double mphy1f1p(double, double, double, double *);
-static double mphy1f1a(double, double, double, double *);
-double hyperg (double, double, double);
+static double mphy1f1p(double, double, double, double *); /* change here */
+static double mphy1f1a(double, double, double, double *); /* change here */
+double mphyperg (double, double, double); /* change here */
 #else
 double exp(), log(), gammafn(), lgammafn(),fabs(), 
 double hyp2f0();
 double gam(), lgam();
-static double mphy1f1p();
-static double mphy1f1a();
-double hyperg();
+static double mphy1f1p(); /* change here */
+static double mphy1f1a(); /* change here */
+double mphyperg(); /* change here */
 #endif
 extern double MAXNUM, MACHEP;
 
@@ -95,7 +95,7 @@ double asum, psum, acanc, pcanc, temp;
 /* See if a Kummer transformation will help */
 temp = b - a;
 if( fabs(temp) < 0.001 * fabs(a) )
-	return( exp(x) * hyperg( temp, b, -x )  );
+	return( exp(x) * mphyperg( temp, b, -x )  );
 
 
 psum = mphy1f1p( a, b, x, &pcanc );
@@ -120,7 +120,8 @@ if( acanc < pcanc )
 done:
 //if( pcanc > 1.0e-12 )
   if( pcanc > 1.0e-12 )
-	mtherr( "hyperg", PLOSS );
+    return(-5.0);
+	/*mtherr( "hyperg", PLOSS );*/
 
 return( psum );
 }
@@ -142,7 +143,7 @@ double *err;
   n = 1.0;
   t = 1.0;
   
-  mpfr_init2(u, 200);
+  mpfr_init2(u, 200); /* set 200 as var*/
   mpfr_init2(x1, 200);
   mpfr_set_d(x1, x, MPFR_RNDN);
   mpfr_init2(a0, 200);

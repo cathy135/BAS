@@ -1,7 +1,12 @@
 /* search up segmentation error (Advanced R Programming Hadley Wickham)
  * memory allocation error, find where it crashes
  * lldb vs gdb will need to run on trig2 terminal via debugger
+ * the ./configure for gmp does not work on trig2 with is needed for mpft
  * look at writing R extensions (specific to C part)
+ * ask zoyia to install things on trig2
+ *** use a regular terminal window or rocker (docker) container (can also run interactively)
+ * PRIORITY: could run the code that throws error in the terminal
+ * developers R-package-devel on CRAN (like a stack overflow) 
  */
 /*--------------------------------------------------------------------------
  CONHYPTWO1(a,b,c,x,y)

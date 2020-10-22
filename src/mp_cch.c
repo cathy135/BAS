@@ -1,5 +1,4 @@
 /* search up segmentation error (Advanced R Programming Hadley Wickham)
- * memory allocation error, find where it crashes
  * lldb vs gdb will need to run on trig2 terminal via debugger
  * look at writing R extensions (specific to C part)
  * 

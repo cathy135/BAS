@@ -37,6 +37,7 @@ double mphyperg2F1(double a, double b, double c, double z) {
   mpfr_set_d(F, 1.0, MPFR_RNDN);
   mpfr_init2(w, 200);
   mpfr_set_d(w, 1.0, MPFR_RNDN);
+  mpfr_init2(res, 200);
   
   if (a<0) {
     /* Apply Abramowitz and Stegun 15.3.3 */
@@ -89,6 +90,7 @@ double mpHyperTwo(double a, double b, double c, double x, double y) {
   mpfr_set_d(zf, 1.0, MPFR_RNDN);
   mpfr_init2(zfg, 200);
   mpfr_set_d(zfg, 0.0, MPFR_RNDN);
+  mpfr_init2(res, 200);
   
   if (y<0) {
     mpfr_set_d(F, 1-y, MPFR_RNDN);
